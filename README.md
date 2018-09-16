@@ -20,8 +20,8 @@ $ docker run -it --rm \
 
 ## Variables
 
-- VERSION: You can select favorite vim version
-- PREFIX: You can select install dir
+- VERSION: You can select favorite vim version.
+- PREFIX: You can select install dir.
 
 ### example
 
