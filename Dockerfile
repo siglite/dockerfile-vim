@@ -24,19 +24,6 @@ RUN groupadd -g ${gid} ${GROUP} && \
 USER ${USER}
 WORKDIR ${HOME}
 
-ARG VERSION
+COPY build.sh $HOME/
 
-RUN git clone https://github.com/vim/vim.git && \
-    git -C vim checkout ${VERSION:-master}
-
-ARG PREFIX=${HOME}/stow/vim-${VERSION:-HEAD}
-
-RUN cd vim/src && \
-    ./configure --prefix=${PREFIX} --enable-fail-if-missing \
-    --with-features=huge --enable-multibyte --enable-acl --enable-cscope --enable-terminal \
-    --enable-perlinterp=dynamic --enable-rubyinterp=dynamic --enable-luainterp=dynamic \
-    --enable-python3interp=dynamic --with-python3-config-dir=$(python3-config --configdir) \
-    --disable-pythoninterp --without-x --enable-gui=no \
-&&  make && make install
-
-CMD ["/bin/bash"]
+CMD ["./build.sh"]
