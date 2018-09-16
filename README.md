@@ -13,9 +13,7 @@ $ docker build -t sig/vim:latest dockerfile-vim/ \
     --build-arg gid="$(id -g)" \
     --build-arg HOME="/home/$(id -un)"
 $ docker run -it --rm \
-    -e VERSION="YOUR_FAVORITE_VIM_VERSION" \
-    -e PREFIX="YOUR_INSTALL_PATH" \
     -v "/path/to/repo/vim:/home/$(id -un)/vim" \
-    -v "YOUR_INSTALL_PATH:YOUR_INSTALL_PATH" \
+    -v "$HOME/local/stow:$HOME/local/stow" \
     sig/vim:latest
 ```
