@@ -25,11 +25,11 @@ else
 fi
 
 if [ "$Prefix" = "None" ]; then
-  Prefix="$HOME/local/stow/vim-${Version:1}"
+  Prefix="$HOME/.local/stow/vim-${Version:1}"
 fi
 
 if [ -e "$Prefix" ]; then
-  echo "[ERR] $Prefix exists. Stop overwrite."
+  echo "[ERR] $Prefix exists. Don't overwrite."
   exit 1
 fi
 

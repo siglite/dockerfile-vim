@@ -1,6 +1,6 @@
 # dockerfile-vim
 
-Building environment for latest vim.
+Building latest Vim with docker.
 
 ## Howto
 
@@ -14,7 +14,7 @@ $ docker build -t sig/vim:latest dockerfile-vim/ \
     --build-arg HOME="/home/$(id -un)"
 $ docker run -it --rm \
     -v "/path/to/repo/vim:/home/$(id -un)/vim" \
-    -v "$HOME/local/stow:$HOME/local/stow" \
+    -v "$HOME/.local/stow:$HOME/.local/stow" \
     sig/vim:latest
 ```
 
