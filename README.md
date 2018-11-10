@@ -6,7 +6,8 @@ Building latest Vim with docker.
 
 ```console
 $ git clone https://github.com/siglite/dockerfile-vim
-$ docker build -t sig/vim:latest dockerfile-vim/ \
+$ cd dockerfile-vim
+$ docker build -t sig/vim:latest build/ \
     --build-arg USER="$(id -un)" \
     --build-arg GROUP="$(id -gn)" \
     --build-arg uid="$(id -u)" \
